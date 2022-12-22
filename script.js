@@ -26,7 +26,7 @@ let taskJustCreated;
  * @type {string} activeUser - name of signed in user
  */
 async function init() {
-    setURL('https://gruppe-400.developerakademie.net/smallest_backend_ever');
+    setURL('https://simon-vitt.developerakademie.net/Join/smallest_backend_ever');
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
