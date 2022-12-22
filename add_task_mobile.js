@@ -125,6 +125,7 @@ function dismissCategoryMobile() {
 function clearTaskMobile() {
     document.getElementById('input-title-mobile').value = '';
     document.getElementById('input-description-mobile').value = '';
+    dismissCategoryMobile();
     document.getElementById('select-category-mobile').selectedIndex = 0;
     document.getElementById('assign-to-list-mobile').classList.remove('visible');
     document.getElementById('input-date-mobile').value = '';

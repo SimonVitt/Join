@@ -225,6 +225,7 @@ async function createNewCategory() {
  * @type {string} selectedColor - resets selected color
  */
 function dismissCategory() {
+    document.getElementById('new-category').value = '';
     if (document.getElementsByClassName('selected-color').length > 0) {
         document.getElementsByClassName('selected-color')[0].classList.remove('selected-color');
     }
@@ -423,6 +424,7 @@ async function createTask() {
 function clearTask() {
     document.getElementById('input-title').value = '';
     document.getElementById('input-description').value = '';
+    dismissCategory();
     document.getElementById('select-category').selectedIndex = 0;
     document.getElementById('assign-to-list').classList.remove('visible');
     document.getElementById('selected-category-colorDiv').style = `background-color: white`;

@@ -56,10 +56,6 @@ input {
     height: 32px;
 }
 
-input:hover {
-    cursor: pointer;
-}
-
 input:focus {
     outline: none;
 }
@@ -73,10 +69,6 @@ textarea {
     margin-left: 8px;
     resize: none;
     height: 92px;
-}
-
-textarea:hover {
-    cursor: pointer;
 }
 
 textarea:focus {
