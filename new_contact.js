@@ -299,7 +299,9 @@ function showThisContactInfos(contactName, contactEmail, contactPhone, initials)
         document.getElementById('bigContactInitials').innerHTML = initials;
         document.getElementById('bigContactName').innerHTML = contactName;
         document.getElementById('bigContactEmail').innerHTML = contactEmail;
+        document.getElementById('bigContactEmail').href = `mailto:${contactEmail}`;
         document.getElementById('bigContactPhone').innerHTML = contactPhone;
+        document.getElementById('bigContactPhone').href = `tel:${+contactPhone}`;
         document.getElementById('bigInitials').style.backgroundColor = contacts[activeContact]['bg-color'];
         document.getElementById('addTask-button-contacts').setAttribute("onclick", `showAddTaskContactlist('${contactName}')`);
 }
