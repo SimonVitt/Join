@@ -186,6 +186,28 @@ h3 {
     overflow-y: auto;
 }
 
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  .this-contact {
+    scrollbar-width: auto;
+    scrollbar-color: #2a3647 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .this-contact::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .this-contact::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  .this-contact::-webkit-scrollbar-thumb {
+    background-color: #2a3647;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+  }
+
 .head {
     display: flex;
     flex-direction: row;
@@ -253,6 +275,8 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 61%;
+    word-break: break-all;
 }
 
 .name-big h2 {
