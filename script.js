@@ -141,6 +141,9 @@ function hideHelp(){
 function showLogout(){
     document.getElementById('logout-button').classList.remove('d-none');
     document.getElementById('options-mobile').classList.remove('d-none');
+    if(document.getElementById('destop-template')){
+        document.getElementById('destop-template').classList.add('d-none');
+    }
 }
 
 
@@ -150,6 +153,9 @@ function showLogout(){
 function hideLogout(){
     document.getElementById('logout-button').classList.add('d-none');
     document.getElementById('options-mobile').classList.add('d-none');
+    if(document.getElementById('destop-template')){
+        document.getElementById('destop-template').classList.remove('d-none');
+    }
 }
 
 

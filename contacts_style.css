@@ -276,7 +276,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     width: 61%;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .name-big h2 {
@@ -397,7 +397,7 @@ margin-top: 30px;
     border-radius: 10px;
     position: fixed;
     bottom: 140px;
-    right: 40px;
+    right: 66px;
 }
 
 .mobile-edit-button:hover {
@@ -645,6 +645,10 @@ margin-top: 30px;
 @media (max-width: 1024px) {
     .overlay {
         background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .arrow-back {
+        right: 66px;
     }
 
     .overlay-complete-contact {
@@ -910,6 +914,14 @@ margin-top: 30px;
     @media (max-width: 400px){
         .addedit-contact-fields {
             padding-bottom: 20px;
+        }
+
+        .arrow-back {
+            right: 30px;
+        }
+
+        .mobile-edit-button{
+            right: 30px;
         }
         
         .addedit-contact-design {
