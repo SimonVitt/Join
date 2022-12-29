@@ -29,6 +29,14 @@ function addNewContact() {
     showNewContact();
 }
 
+/**
+ * function to show the contact, which has been created
+ * 
+ * @type {string} contactName - This is the name of the contact
+ * @type {string} contactEmail - This is the email-adress of the contact
+ * @type {string} contactPhone - This is the phone-number of the contact
+ * @type {string} initials - This are the first letters of the parts of name of the contact
+ */
 function showNewContact() {
     document.getElementById('complete-contact').classList.remove('d-none');
     let placeInArray = findJSONInArray();
@@ -43,6 +51,10 @@ function showNewContact() {
     showThisContactInfos(contactName, contactEmail, contactPhone, initials);
 }
 
+/**
+ * function to find the right JSON in the contacts-array
+ * 
+ */
 function findJSONInArray() {
     let i = -1;
     var index = contacts.findIndex(function (item, i) {
@@ -55,7 +67,6 @@ function findJSONInArray() {
  * function to push the next letter into backend
  * 
  */
-//
 function pushAllContacts() {
     backend.setItem('contact', JSON.stringify(contacts));
 }
@@ -186,7 +197,7 @@ function renderContacts() {
  */
 function generateSingleContacts(i, contactName, contactEmail, contactPhone, initials) {
     return `
-    <div onclick="openSingleContact(), setActiveUser(${i}), showThisContactInfos('${contactName}', '${contactEmail}', ${contactPhone}, '${initials}')" class="single-contact">
+    <div id="single-contact${i}" onclick="openSingleContact(), setActiveUser(${i}), showThisContactInfos('${contactName}', '${contactEmail}', ${contactPhone}, '${initials}')" class="single-contact">
                             <div id="initials${i}" class="initials">${initials}</div>
                             <div class="name-email">
                                 <div class="name-small">${contactName}</div>
@@ -195,6 +206,10 @@ function generateSingleContacts(i, contactName, contactEmail, contactPhone, init
                         </div>`;
 }
 
+/**
+ * function to set the active-user
+ * 
+ */
 function setActiveUser(i){
     activeContact = i;
 }
@@ -274,7 +289,14 @@ async function deleteUser() {
     await backend.deleteItem('contact',);
 }
 
-
+/**
+ * function to get data for other functions
+ * 
+ * @type {string} name - This is the name of the contact
+ * @type {string} email - This is the email-adress of the contact
+ * @type {string} phone - This is the phone-number of the contact
+ * @type {string} initials - This are the first letters of the parts of name of the contact
+ */
 function dataForShowInfo(){
     let name = contacts[activeContact]['name'];
     let email = contacts[activeContact]['email'];
@@ -288,7 +310,6 @@ function dataForShowInfo(){
  * function to show the contact on big screen you clicked on 
  * 
  * @type {array} contacts - This is the array with all contacts
- * @param {number} i - This is the number of the contacts-place in the array
  * @param {string} contactName - This is the name of the contact
  * @param {string} contactEmail - This is the email-adress of the contact
  * @param {string} contactPhone - This is the phone-number of the contact
@@ -296,14 +317,38 @@ function dataForShowInfo(){
  * @type {string} activeContact - This is the actual contact showed by details on big screen
  */
 function showThisContactInfos(contactName, contactEmail, contactPhone, initials) {
+        resetBGColor();
+
         document.getElementById('bigContactInitials').innerHTML = initials;
         document.getElementById('bigContactName').innerHTML = contactName;
         document.getElementById('bigContactEmail').innerHTML = contactEmail;
-        document.getElementById('bigContactEmail').href = `mailto:${contactEmail}`;
         document.getElementById('bigContactPhone').innerHTML = contactPhone;
-        document.getElementById('bigContactPhone').href = `tel:${+contactPhone}`;
         document.getElementById('bigInitials').style.backgroundColor = contacts[activeContact]['bg-color'];
         document.getElementById('addTask-button-contacts').setAttribute("onclick", `showAddTaskContactlist('${contactName}')`);
+
+        changeColorBG(activeContact);
+}
+
+/**
+ * function to reset the color of the contact background in the contactlist
+ * 
+ * @type {array} contacts - This is the array with all contacts
+ */
+function resetBGColor(){
+    for (let j = 0; j < contacts.length; j++) {
+        document.getElementById('single-contact'+j).style.backgroundColor = "rgb(255, 255, 255)";
+        document.getElementById('single-contact'+j).style.color = "black";
+    }
+}
+
+/**
+ * function to change the color of the contact background in the contactlist
+ * 
+ * @param {number} i - This is the number of the contacts-place in the array
+ */
+function changeColorBG(i){
+    document.getElementById('single-contact'+i).style.backgroundColor = "rgb(42, 54, 71)";
+    document.getElementById('single-contact'+i).style.color = "white";
 }
 
 /**
