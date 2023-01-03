@@ -31,9 +31,9 @@ function initDestop() {
             checkList.classList.add('visible');
     }
     renderCategories();
-    renderContactsAddTask()
+    renderContactsAddTask();
+    setInputDateDefault();
 }
-
 
 /**
  * This function is used to to call all methods to render the mobile view;
@@ -109,6 +109,7 @@ function assignContactOnClick(i) {
             document.getElementById(`input-contact-mobile${i}`).checked = true;
         }
     }
+    displayAssignedContacts();
 }
 
 /**
@@ -117,6 +118,20 @@ function assignContactOnClick(i) {
  */
 function stopPropagationInput(event) {
     event.stopPropagation();
+}
+
+/**
+ * sets due date input to todays date on default
+ */
+function setInputDateDefault(){
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ('0' + (today.getMonth() + 1)).slice(-2);
+    const day = ('0' + today.getDate()).slice(-2);
+    document.getElementById('input-date').value = year + '-' + month + '-' + day;
+    if (document.getElementById('input-date-mobile')) {
+        document.getElementById('input-date-mobile').value = year + '-' + month + '-' + day;
+    }
 }
 
 /**
@@ -312,7 +327,7 @@ function resetBtnClickedLow() {
     }
 }
 
-function priorityBtnClicked(selectedPriority){
+function priorityBtnClicked(selectedPriority) {
     document.getElementById(`${selectedPriority}-btn`).classList.add('choosePriorityPicked');
     document.getElementById(`${selectedPriority}-btn`).classList.add(`${selectedPriority}`);
     if (document.getElementById(`${selectedPriority}-btn-mobile`)) {  //checks if mobile is extra (in add Task Template no -mobile IDs)
@@ -378,6 +393,25 @@ function checkAssignedTo() {
     });
 }
 
+function displayAssignedContacts(){
+    let assignedContacts = getAssignedContacts();
+    document.getElementById('assignedContactsDiv').innerHTML = '';
+    assignedContacts.forEach(contact => {
+        document.getElementById('assignedContactsDiv').innerHTML += assignedContactsDivContact(contact)
+    });
+    if(document.getElementById('assignedContactsDivMobile')){
+        document.getElementById('assignedContactsDivMobile').innerHTML = '';
+    assignedContacts.forEach(contact => {
+        document.getElementById('assignedContactsDivMobile').innerHTML += assignedContactsDivContact(contact)
+    });
+    }
+}
+
+function assignedContactsDivContact(contact) {
+    let lettersContactCircle = getInitials(contact['name']);
+    return `<span class="contributors-circle-addtask" style="background-color: ${contact['bg-color']}">${lettersContactCircle}</span>`;
+}
+
 /**
  * checks if user gave all input to create a task
  */
@@ -411,7 +445,7 @@ async function createTask() {
         renderTasks();
         hideAddTask();
         showSuccessMessage();
-    }else{
+    } else {
         window.location.href = 'board.html';
     }
     localStorage.setItem('taskJustCreated', 'true');

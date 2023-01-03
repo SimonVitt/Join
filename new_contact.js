@@ -133,7 +133,7 @@ function createAlphabetBox() {
     contactList.innerHTML = '';
 
     for (let i = 0; i < sortedAlphabetList.length; i++) {
-        let letter = sortedAlphabetList[i];
+        let letter = sortedAlphabetList[i].toUpperCase();
 
         contactList.innerHTML += generateLetterBox(letter);
     }
@@ -264,7 +264,7 @@ function getInitials(name) {
  * @param {string} name - This is the name of the contact
  */
 function getFirstLetter(name) {
-    return name.charAt(0);
+    return name.charAt(0).toUpperCase();
 }
 
 /**

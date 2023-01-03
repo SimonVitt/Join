@@ -174,7 +174,7 @@ option {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .choosePriority img {
@@ -453,6 +453,31 @@ option {
     border: 1px solid #ffffff;
   }
 
+  .contributors-circle-addtask {
+    box-sizing: border-box !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 9px;
+    color: white;
+    font-weight: 200;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    background: #02CF2F;
+    border-radius: 58px;
+    margin: 0px 5px !important;
+}
+
+.assignedContactsDiv{
+    display: flex;
+    overflow-x: auto;
+    height: 42px;
+    align-items: center;
+    margin-left: 6px;
+}
+
   @media(max-width: 1100px){
     .choosePriority div {
         width: 96px;
@@ -527,7 +552,7 @@ option {
     }
 
     .choosePriority {
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .choosePriority div {

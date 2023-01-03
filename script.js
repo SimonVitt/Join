@@ -26,7 +26,7 @@ let taskJustCreated;
  * @type {string} activeUser - name of signed in user
  */
 async function init() {
-    setURL('https://simon-vitt.developerakademie.net/Join/smallest_backend_ever');
+    setURL('/Join/smallest_backend_ever');
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
     tasks = JSON.parse(backend.getItem('tasks')) || [];
@@ -35,7 +35,6 @@ async function init() {
     contacts = JSON.parse(backend.getItem('contact')) || [];
 
     activeUser = JSON.parse(localStorage.getItem('activeUser')) || [];
-    console.log('Active user:', activeUser);
 
 }
 
@@ -89,31 +88,65 @@ function renderUsernameTopper(){
 
 
 /**
- * highlights the current section in navbar and footer depending on in which section the user is
+ * calls functions to highlight the current section
  *@param {string} currentSection - the current page the user is in
  */
 function setActiveSection(currentSection){
+    checksForSummary(currentSection);
+    checksForBoard(currentSection);
+    checksForAddTask(currentSection);
+    checksForContacts(currentSection);
+    checksForLegalNotice(currentSection);
+}
+
+/**
+ * checks if current section is summary, then sets footer and navbar, depending on it
+ */
+function checksForSummary(currentSection){
     if(currentSection == 'summary'){
         document.getElementById('summary-section').classList.add('active-content-section');
         document.getElementById('summary-section-mobile').classList.add('active-content-section');
     }
+}
+
+/**
+ * checks if current section is board, then sets footer and navbar, depending on it
+ */
+function checksForBoard(currentSection){
     if (currentSection == 'board') {
         document.getElementById('board-section').classList.add('active-content-section');
         document.getElementById('board-section-mobile').classList.add('active-content-section');
     }
+}
+
+/**
+ * checks if current section is addtask, then sets footer and navbar, depending on it
+ */
+function checksForAddTask(currentSection){
     if (currentSection == 'addtask') {
         document.getElementById('addtask-section').classList.add('active-content-section');
         document.getElementById('addtask-section-mobile').classList.add('active-content-section');
     }
+}
+
+/**
+ * checks if current section is contacts, then sets footer and navbar, depending on it
+ */
+function checksForContacts(currentSection){
     if (currentSection == 'contacts') {
         document.getElementById('contacts-section').classList.add('active-content-section');
         document.getElementById('contacts-section-mobile').classList.add('active-content-section');
     }
+}
+
+/**
+ * checks if current section is legalnotice, then sets footer and navbar, depending on it
+ */
+function checksForLegalNotice(currentSection){
     if (currentSection == 'legalnotice') {
         document.getElementById('legalnotice-section').classList.add('active-content-section');
     }
 }
-
 
 /**
  * function shows the helppage on each page

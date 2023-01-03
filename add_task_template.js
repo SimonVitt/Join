@@ -20,6 +20,7 @@ function showAddTaskEdit(taskId) {
     document.getElementById('overlay').classList.add('d-none');
     document.getElementById('formAddTask').setAttribute("onsubmit", `onsubmitEdit(${task['id']}); return false;`);
     renderEditTask(task);
+    displayAssignedContacts();
 }
 
 /**
