@@ -22,7 +22,30 @@ body{
     top: 89px;
     height: calc(100vh - 89px);
     width: calc(100% - 232px);
+    overflow-y: auto;
 }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  .inner-content {
+    scrollbar-width: auto;
+    scrollbar-color: #2a3647 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .inner-content::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .inner-content::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  .inner-content::-webkit-scrollbar-thumb {
+    background-color: #2a3647;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+  }
 
 .headline{
     display: flex;
