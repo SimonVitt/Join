@@ -126,6 +126,7 @@ function showAddTaskContactlist(name){
         }
         counter++;
     });
+    displayAssignedContacts();
 }
 
 /**

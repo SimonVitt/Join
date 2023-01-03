@@ -393,6 +393,9 @@ function checkAssignedTo() {
     });
 }
 
+/**
+ * displays assigned contacts
+ */
 function displayAssignedContacts(){
     let assignedContacts = getAssignedContacts();
     document.getElementById('assignedContactsDiv').innerHTML = '';
