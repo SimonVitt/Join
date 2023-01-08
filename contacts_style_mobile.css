@@ -1,0 +1,335 @@
+
+/*Stop*/
+
+@media (min-width: 1024px) {
+    .button-new-contact {
+        display: none;
+    }
+
+    .white-x {
+        display: none;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .mobile-edit-button {
+        display: none;
+    }
+
+    .arrow-back {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .arrow-back {
+        right: 66px;
+    }
+
+    .overlay-complete-contact {
+        background-color: rgb(246, 247, 248);
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .content-destop {
+        min-width: 0px;
+    }
+
+    .inner-content {
+        left: 0;
+        width: 100%;
+        top: 0;
+        margin-top: 85px;
+        margin-bottom: 90px;
+        padding-bottom: 85px;
+    }
+
+    .complete-page {
+        flex-direction: column;
+    }
+
+    .button-new-contact {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+        width: 90%;
+        
+    }
+
+    .button-new-contact button:hover {
+        background-color: rgb(41, 171, 226);
+    }
+
+    .button-new-contact img {
+        height: 25px;
+    }
+
+    .button-new-contact button {
+        background-color: rgb(42, 54, 71);
+        color: white;
+        border-radius: 8px;
+        height: 48px;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        padding-left: 10px;
+    }
+
+    .all-contacts {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .all-contacts-div {
+        height: 80%;
+    }
+
+    .alphabet-box {
+        width: 90%;
+    }
+
+    .single-contact {
+        height: 80px;
+    }
+
+   .name-small {
+    font-size: 24px;
+    font-weight: 500;
+   }
+
+   .email-small {
+    font-size: 15px;
+    font-weight: 500;
+   }
+
+    .addedit-contact {
+        margin-top: 0;
+    }
+
+    
+    
+    /* Show complete contact*/
+
+    .complete-contact {
+        width: 100%;
+    }
+
+    .this-contact {
+        margin-top: 20px;
+        height: calc(100vh - 190px);
+        padding-bottom: 70px;
+    }
+
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .headline-contacts h1{
+        margin-bottom: 32px;
+        color: #2A3647;
+    }
+
+    .horizontal-line {
+        display: none;
+    }
+
+    .initials-big {
+        margin-right: 15px;
+    }
+
+    .heading-information {
+        font-size: 22px;
+        margin-right: 0;
+    }
+
+    .edit-contact {
+        display: none;
+    }
+
+    .new-contact-button {
+        display: none;
+    }
+
+} 
+    @media (min-width: 900px){
+            .white-x {
+                display: none;
+            }
+    }
+    @media (max-width: 900px) {
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+
+        .addedit-contact-display {
+            display:block;
+        }
+
+        .addedit-contact {
+            flex-direction: column;
+            width: 100%;
+            height: 80%;
+            margin-top: 10vh;
+
+            animation: flyInMobile;
+            animation-duration: 0.5s;
+        }
+
+        .new-addedit-contact {
+            flex-direction: column;
+            width: 100%;
+            height: 80%;
+            bottom: -1500px;
+            margin-top: 10vh;
+            right: 0;
+
+            animation: flyOutMobile;
+            animation-duration: 0.8s;
+        }
+
+        @keyframes flyInMobile {
+            0% {bottom:-1500px}
+            100% { bottom: 0px;}
+        }
+
+        @keyframes flyOutMobile {
+            0% {bottom: 0px}
+            100% { bottom: -1500px;}
+        }
+
+        .addedit-contact-design {
+            width: 100%;
+            height: 43vh;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 25px;
+        }
+    
+        .white-x {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+        }
+    
+        .addedit-contact-fields {
+            width: 100%;
+            height: 53vh;
+            flex-direction: column;
+            align-items: center;
+            border-top-right-radius: 0;
+            border: 2px solid lightgrey;
+            border-bottom-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+    
+        .addedit-contact-logo {
+            display: none;
+        }
+    
+        .addedit-contact-design {
+            align-items: center;
+            padding-top: 50px;
+        }
+    
+        .addedit-contact-image img{
+            height: 130px;
+            position: absolute;
+        }
+
+        .addedit-contact-image {
+            margin-top: -15px;
+        }
+    
+        .addedit-contact-headline h2 {
+            font-size: 50px;
+        }
+    
+        .addedit-contact-line {
+            width: 35%;
+        }
+    
+        .name-field {
+            width: 100%;
+        }
+    
+        .email-field {
+            width: 100%;
+        }
+    
+        .phone-field {
+            width: 100%;
+        }
+
+        .add-contact-buttons {
+            justify-content: center;
+        }
+    
+        .addedit-contact-input-fields {
+            align-items: center;
+        }
+    
+        .button-cancel {
+            display: none;
+        }
+    
+        .button-create button {
+            width: 210px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    
+        .close-x {
+            display: none;
+        }
+        
+    }
+
+    @media (max-width: 720px){
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @media (max-width: 400px){
+        .addedit-contact-fields {
+            padding-bottom: 20px;
+        }
+
+        .arrow-back {
+            right: 30px;
+        }
+
+        .mobile-edit-button{
+            right: 30px;
+        }
+        
+        .addedit-contact-design {
+            padding-top: 10px;
+        }
+
+        .addedit-contact-headline h2 {
+            font-size: 40px;
+        }
+
+        .addedit-contact-motivation {
+            font-size: 15px;
+        }
+
+        .addedit-contact-line {
+            margin-bottom: 8%;
+        }
+
+        .addedit-contact-image img {
+            height: 85px;
+        }
+
+
+    }
