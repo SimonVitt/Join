@@ -50,6 +50,11 @@
         margin-top: 85px;
         margin-bottom: 90px;
         padding-bottom: 85px;
+        overflow-y: hidden;
+    }
+
+    .destop-template-contacts{
+        display: none;
     }
 
     .complete-page {
